@@ -84,9 +84,10 @@ account_balance = 5000.5
 # print(f"Your balance is #{account_balance}")
 
 
-first_name = input("Firstname: ")
+# first_name = input("Firstname: ")
+# first_name 
 
-print(f"Welcome to class {first_name}")
+# print(f"Welcome to class {first_name}")
 
 
     
@@ -96,3 +97,136 @@ print(f"Welcome to class {first_name}")
     # i. Integers - int() e.g 12, 230
     # ii. Float - float() e.g 1.5, 23.455
     # iii. complex - complex() e.g 2 + 3j
+    
+# 3. Sequence Type:
+    # i. tuple - tuple(), e.g  (1, 2, 4, 5)
+    # ii. list - list(), e.g [1, 2, 3, 4]
+    # iii. range - range()
+    
+# students = ('Ayo', 'Ola', 'Lola')
+
+# students = ['Ayo', 'Ola', 'Lola']
+# students
+# print(type(students))
+
+# print(list(range(20)))
+# print(list(range(1, 21)))
+# print(list(range(1, 21, 2)))
+
+
+# 4. Boolean type: True and False
+isActive = True
+
+# 5. Set type : set(), {1, 2, 3}
+setA = {1, 2, 3, 4, 6, 10, 9, 8, 7, 7}
+names = {'Ayo', 'Ola', 'Lola', 'Ayo'}
+# print(names)
+
+# 6. Mapping type:  dict(), {"name": "Ayo", 'age': 20}
+
+# student = {"name": "Ayo", 'age': 20}
+
+# 7. None type 
+box = None
+
+# 8. Binary types : Byte, btyearray, memoryview 
+
+
+# Datatypes conversion
+
+num = 12
+# print(str(num))
+
+# amount = float(input("Amount: "))
+# print(type(amount))
+
+
+# python operators
+# 1. Arithmetic operators: +, -, /, *, **, %, //
+# print(5 ** 2)
+print(5 % 2)
+# print(5 // 2)
+
+# 2. Assignment operators: =, +=, -=, /=, *= ...
+# x = 5
+# x += 2  # x = x + 2
+# x -= 2
+# print(x)
+
+# 3. comparison operator: ==, !=, >, <, >=, <=
+x = 2
+# print(x >= 2)
+
+# 4. Logical Operator: or, and , not
+""" 
+A --- B --- AND --- OR
+0     0     0       0
+0     1     0       1
+1     0     0       1
+1     1     1       1
+
+NOT A
+1
+1
+0
+0
+
+"""
+
+email_is_verified = False
+password_is_verified = False
+# print(email_is_verified and password_is_verified)
+
+
+# conditional statement (if/else/elif)
+
+x = 5
+
+# if x == 3:
+#     print('yes!')
+# else:
+#     print("Oh no !")
+
+
+# if email_is_verified:
+#     print("Access Granted.")
+# else:
+#     print("Wetin you dey find")
+
+# if email_is_verified and password_is_verified:
+#     print("Login Successful")
+# else:
+#     print("Incorrect email or password")
+
+# original = 3
+# predicted_score = int(input("Predicted score: "))
+
+# if predicted_score == original:
+#     print('you won 100k')
+
+# elif predicted_score > 2:
+#     print("You tried, you won 10k")
+    
+# else:
+#     print("Sorry oh! you gat nothing")
+
+# fizz - divisible by 3 with no remainder
+# Buzz - divisible by 5 with no remainder
+# fizzBuzz - divisible by 3 and 5 with no remainder 
+
+number = int(input("Number: "))
+
+if number % 3 == 0 and number % 5 == 0:
+    print(f"{number} is a FizzBuzz")
+
+elif number % 3 == 0:
+    print(f"{number} is a Fizz")
+    
+elif number % 5 == 0:
+    print(f"{number} is a Buzz")
+
+else:
+    print(f"{number} is neither Fizz nor Buzz")
+    
+    
+# build a system that tells if a number is odd or even
