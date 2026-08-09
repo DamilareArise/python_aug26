@@ -144,7 +144,7 @@ num = 12
 # python operators
 # 1. Arithmetic operators: +, -, /, *, **, %, //
 # print(5 ** 2)
-print(5 % 2)
+# print(5 % 2)
 # print(5 // 2)
 
 # 2. Assignment operators: =, +=, -=, /=, *= ...
@@ -159,11 +159,11 @@ x = 2
 
 # 4. Logical Operator: or, and , not
 """ 
-A --- B --- AND --- OR
-0     0     0       0
-0     1     0       1
-1     0     0       1
-1     1     1       1
+A --- B --- AND --- OR --- XOR
+0     0     0       0       0
+0     1     0       1       1
+1     0     0       1       1
+1     1     1       1       0
 
 NOT A
 1
@@ -214,19 +214,100 @@ x = 5
 # Buzz - divisible by 5 with no remainder
 # fizzBuzz - divisible by 3 and 5 with no remainder 
 
-number = int(input("Number: "))
+# number = int(input("Number: "))
 
-if number % 3 == 0 and number % 5 == 0:
-    print(f"{number} is a FizzBuzz")
+# if number % 3 == 0 and number % 5 == 0:
+#     print(f"{number} is a FizzBuzz")
 
-elif number % 3 == 0:
-    print(f"{number} is a Fizz")
+# elif number % 3 == 0:
+#     print(f"{number} is a Fizz")
     
-elif number % 5 == 0:
-    print(f"{number} is a Buzz")
+# elif number % 5 == 0:
+#     print(f"{number} is a Buzz")
 
-else:
-    print(f"{number} is neither Fizz nor Buzz")
+# else:
+#     print(f"{number} is neither Fizz nor Buzz")
     
     
 # build a system that tells if a number is odd or even
+
+
+# 5. Identity operator: is, is not
+x = 5
+y = 5
+# print(x is not y)
+
+# 6. Membership operator: in, not in
+
+students = ['Ade', 'Ola', 'Dami']
+student = 'Folakemi' #['F', 'o', 'l'..]
+# print(student not in students)
+
+# A simple email validator
+
+# email = input("Email: ")
+
+# if '@' in email and '.' in email:
+#     print(f"{email} is a valid email.")
+
+# else:
+#     print("Invalid email")
+    
+
+# 7. bitwise operator 
+# & - and 
+# | - or
+# ~ - not
+# ^ - xor
+
+x = 10
+y = 5
+# print(~x)
+# print(bin(y))
+# print(bin(x ^ y))
+
+""" 
+1   0   1   0
+    1   0   1
+1   1   1   1
+
+"""
+
+
+
+# Python strings 
+
+name  = 'Ayo' # ['A', 'y', 'o']
+
+# print(ord('a'))
+# print(name[-1])
+# print(len(name))
+
+exp = "  Hi Everyone, Python is my favorite programming language.  "
+# print(len(exp))
+# print(exp[3:11])
+# print(exp[3:])
+
+# print(exp.upper())
+# print(exp.lower())
+# print(exp.capitalize())
+# print(exp.title())
+
+# print(len(exp.strip()))
+
+action = input("Are you sure? Yes/No: ")
+if action.strip().lower() == 'yes':
+    print('Proceed')
+
+else:
+    print('Decline')
+    
+# 1. Build a simple grading system
+# 70 - 100  = A
+# 60 - 69 = B
+# 50 - 59 = C
+# 45 - 49 = D
+# 40 - 44 = E
+# 0 - 39 = F
+
+# 2. Build a simple CBT app. 
