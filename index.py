@@ -295,12 +295,12 @@ exp = "  Hi Everyone, Python is my favorite programming language.  "
 
 # print(len(exp.strip()))
 
-action = input("Are you sure? Yes/No: ")
-if action.strip().lower() == 'yes':
-    print('Proceed')
+# action = input("Are you sure? Yes/No: ")
+# if action.strip().lower() == 'yes':
+#     print('Proceed')
 
-else:
-    print('Decline')
+# else:
+#     print('Decline')
     
 # 1. Build a simple grading system
 # 70 - 100  = A
@@ -311,3 +311,78 @@ else:
 # 0 - 39 = F
 
 # 2. Build a simple CBT app. 
+
+
+# Python collections or array
+# 1. list: it can be indexed, changeable, allows duplicate items, ordered 
+# [] or list()
+# basket = ['Orange', 'Tomatoes', 'Meat', 'Fish', 'Pepper', 'Fish', 'apple']
+# print(type(basket))
+# print(basket[-1])
+# print(basket[0:4])
+# basket[3] = 'Egg'
+
+# basket.append('Egg')
+# basket.insert(3, 'Egg')
+# basket.extend(["Egg", 'Oil'])
+# basket.pop(2)
+# basket.remove('Meat')
+# basket.clear()
+
+# print(basket.index('Fish', 4))
+# print(basket.count('Fish'))
+
+# basket.sort(key=str.lower, reverse=True)
+# print(basket)
+
+# scores = [12, 14, 16]
+# print(sum(scores))
+# print(max(scores))
+
+
+# 2. tuple: indexed, allows duplicate, ordered, unchangeable
+# () or tuple()
+
+basket = ('Orange', 'Tomatoes', 'Meat', 'Fish', 'Pepper', 'Fish')
+# print(type(basket))
+
+# print(basket[0])
+# basket[0] = "Apple"
+
+# print(basket.count("Fish"))
+# print(basket.index("Meat"))
+
+# new_basket = list(basket)
+# print(new_basket)
+# new_basket[0] = "Apple"
+# basket = tuple(new_basket) 
+# print(basket)
+
+# unpacking
+
+# a, b, c, d, e, f = ('Orange', 'Tomatoes', 'Meat', 'Fish', 'Pepper', 'Fish')
+# a, b, *c, f = ('Orange', 'Tomatoes', 'Meat', 'Fish', 'Pepper', 'Fish')
+# *a, b = ('Orange', 'Tomatoes', 'Meat', 'Fish', 'Pepper', 'Fish')
+
+# *a, = ('Orange', 'Tomatoes', 'Meat', 'Fish', 'Pepper', 'Fish')
+# print(a)
+
+
+# 3. set: unordered, doesn't allow duplicate, unchangeable, can't be indexed
+# {} or set()
+
+basket = {'Orange', 'Tomatoes', 'Meat', 'Fish', 'Pepper', 'Fish'}
+# print(basket[0])
+# basket[0] = "Apple"
+
+# basket.add('Apple')
+# basket.update(["Apple", "Egg"])
+# basket.pop()
+basket.remove('Fisherman')
+# basket.discard('Fisherman')
+print(basket)
+
+
+
+
+# 4. dictionary
