@@ -316,10 +316,10 @@ exp = "  Hi Everyone, Python is my favorite programming language.  "
 # Python collections or array
 # 1. list: it can be indexed, changeable, allows duplicate items, ordered 
 # [] or list()
-# basket = ['Orange', 'Tomatoes', 'Meat', 'Fish', 'Pepper', 'Fish', 'apple']
+basket = ['Orange', 'Tomatoes', 'Meat', 'Fish', 'Pepper', 'Fish', 'apple']
 # print(type(basket))
 # print(basket[-1])
-# print(basket[0:4])
+# print(basket[0:4]) #slicing
 # basket[3] = 'Egg'
 
 # basket.append('Egg')
@@ -378,11 +378,115 @@ basket = {'Orange', 'Tomatoes', 'Meat', 'Fish', 'Pepper', 'Fish'}
 # basket.add('Apple')
 # basket.update(["Apple", "Egg"])
 # basket.pop()
-basket.remove('Fisherman')
+# basket.remove('Fisherman')
 # basket.discard('Fisherman')
-print(basket)
+# print(basket)
+
+setA = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+setB = {2, 4, 10, 12, 11}
+setC = {1, 2, 3, 4}
+
+# print(setA.union(setB))
+# print(setA.intersection(setB))
+# print(setA.difference(setB))
+# print(setB.difference(setA))
+# print(setA.symmetric_difference(setB))
+
+# setA.symmetric_difference_update(setB)
+# print(setA)
+
+# print(setA.issubset(setC))
+
+
+
+# 4. dictionary 
+# {key:value} or dict()
+car = {
+    "brand": "Toyota",
+    "model": "Camry 2026",
+    "color": "wine",
+    "type": "hybrid",
+    # "owner": {
+    #     "name": "Monioluwa",
+    #     "address": {
+    #         "state": "Oyo state",
+    #         "country": "Nigeria"
+    #     }
+    # }
+}
+
+# print(car['types'])
+# print(car['owner']['address']['country'])
+# owner = car['owner']
+# print(owner['address']['country'])
+
+# print(car.keys())
+# print(car.values())
+# print(car.items())
+
+# print(car.get('type', "Not Found"))
+# car.pop('type')
+# car.popitem()
+
+# car.update({"model": "Camry 2027"})
+# car['model'] = "Camry 2027"
+
+# print(car)
+
+
+# Python Loop
+# 1. For loop: it iterate over a sequence(e.g list, tuple, set, or string)
+
+# name = "Monioluwa"
+# for x in name:
+#     print(x)
+#     print("_______")
+    
+# students = ["Ade", "John", "Ola"]
+# for student in students:
+#     print(f"Welcome to class {student}")
+    
+
+score = 0
+questions = [
+    "What is the capital of Lagos a. Ikeja b. Iyanapaja",
+    "What is the capital of Edo a. Ikeja b. Benin",
+    "What is the capital of Osun a. Osogbo b. Iyanapaja",
+]
+answers = ["a", "b", "a"]
+marks = [10, 20, 5]
+
+x = 1
+
+# for ques, ans, mark in zip(questions, answers, marks):
+#     print(f"{x}. {ques}")
+#     x+=1
+    
+#     # marking scheme
+#     user_ans = input("Ans: ")
+#     if user_ans.strip().lower() == ans:
+#         print("Correct")
+#         score += mark
+#     else:
+#         print("Incorrect")
+
+# print(f"Total score: {score}/{sum(marks)}")
 
 
 
 
-# 4. dictionary
+# 2. While loop 
+
+
+# A simple Todo app
+# 1. add a todo
+# 2. delete a todo
+# 3. edit a todo
+# 4. View all
+# 5. clear all
+
+
+
+
+# .pop , .append, .update, .extend
+
