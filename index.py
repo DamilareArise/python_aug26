@@ -487,6 +487,27 @@ x = 1
 
 
 
-
 # .pop , .append, .update, .extend
 
+
+value1= float(input("Value 1: "))
+value2= float(input("Value 2: "))
+
+print("""
+    1. Addition
+    2. Subtraction
+    3. Division
+    #. Exit     
+""")
+
+choice = input("choice: ").strip()
+if choice == "1":
+    print(f"Ans: {value1 + value2}")
+elif choice == "2":
+    print(f"Ans: {value1 - value2}")
+elif choice == "3":
+    print(f"Ans: {value1 / value2}")
+elif choice == "#":
+    exit('Goodbye !')
+else:
+    print("Invalid option")
