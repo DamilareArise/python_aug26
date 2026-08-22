@@ -447,7 +447,7 @@ car = {
 #     print(f"Welcome to class {student}")
     
 
-score = 0
+# score = 0
 questions = [
     "What is the capital of Lagos a. Ikeja b. Iyanapaja",
     "What is the capital of Edo a. Ikeja b. Benin",
@@ -456,7 +456,7 @@ questions = [
 answers = ["a", "b", "a"]
 marks = [10, 20, 5]
 
-x = 1
+# x = 1
 
 # for ques, ans, mark in zip(questions, answers, marks):
 #     print(f"{x}. {ques}")
@@ -474,40 +474,203 @@ x = 1
 
 
 
+# exam = [
+#     ("What is the capital of Lagos a. Ikeja b. Iyanapaja", "a", 10),
+#     ("What is the capital of Edo a. Ikeja b. Benin", "b", 20),
+#     ("What is the capital of Osun a. Osogbo b. Iyanapaja", "a", 5)
+# ]
 
-# 2. While loop 
+
+# # a, b, c=("What is the capital of Lagos a. Ikeja b. Iyanapaja", "a", 10)
+
+# no = 1
+# for ques, ans, mark in exam:
+#     print(f"{no}. {ques}")
+#     no+=1
+    
+#     user_ans = input("Ans: ")
+#     if user_ans.strip().lower() == ans:
+#         print("Correct")
+#         score += mark
+#     else:
+#         print("Incorrect")
+        
+# print(f"Total score: {score}/{sum(marks)}")
+
+
+# exam = {
+#     "What is the capital of Lagos a. Ikeja b. Iyanapaja": "a",
+#     "What is the capital of Edo a. Ikeja b. Benin": "b",
+#     "What is the capital of Osun a. Osogbo b. Iyanapaja": "a"
+# }
+
+# print(exam.items())
+
+# for ques, ans in exam.items():
+#     print(ans)
+
+  
+# students = ["Ade", "John", "Ola"]
+# for student in students:
+#     print(student)  
+#     for letter in student:
+#         print(letter)
+
+
+# for x in range(1, 6):
+#     print(f"{x} Times Table")
+#     for y in range(1, 6):
+#         print(f"{x} x {y} = {x*y}")
+    
+    
+
+# 2. While loop: While keeps iterating as long the condition is True.
+
+# x = 10
+# while x > 0:
+#     print(x)
+#     x -= 1
+    
+    
+# balance = 1000
+# while balance > 100:
+#     balance -= 100
+#     print("You can still buy stuff, balance is", balance)
+    
+#     if balance == 500:
+#         print("I no dey buy again")
+#         break
+    
+     
+
+# ticket = 10
+# while ticket > 0:
+#     age = int(input("Age: "))
+#     if age < 18:
+#         print("Access not granted")
+#         continue
+    
+#     ticket -= 1
+#     print("Ticket remains", ticket)
+
+x = 10
+
+# while True:
+#     x -= 1
+#     print(x)
+#     if x == 4:
+#         break
 
 
 # A simple Todo app
-# 1. add a todo
-# 2. delete a todo
-# 3. edit a todo
-# 4. View all
-# 5. clear all
 
+database=[]
 
+while True:
+    print("""
+    1. Add a todo
+    2. Delete a todo
+    3. Edit a todo
+    4. View all
+    5. Clear all
+    6. Set todo as completed
+    #. exit
+    """)
+    choice = input("Choice: ").strip()
+    if choice == '1':
+        print('Add Todo')
+        todo = input("Your Todo: ").strip().capitalize()
+        if todo:
+            database.append(todo)
+            print("Todo saved.")
+        else:
+            print("No todo added.")
+        
+    elif choice == "2":
+        print("Delete Todo")
+        item_no = int(input("Delete Item no: "))
+        
+        if item_no > len(database):
+            print("Invalid Item no. Try again.")
+            continue
+        
+        index = item_no - 1
+        database.pop(index)
+        print("Todo Deleted.")
+    
+        
+    elif choice == "3":
+        print("Edit Todo")
+        item_no = int(input("Edit Item no: "))
+                
+        if item_no > len(database):
+            print("Invalid Item no. Try again.")
+            continue
+        
+        
+        new_name = input("New: ").strip().capitalize()
+        if not new_name:
+            print("Todo can't be empty")
+            continue
+        
+        index = item_no - 1
+        database[index] = new_name
+        print("Todo edited successfully")
+        
+        
+        
+    elif choice == "4":
+        print("View all Todo")
+        
+        no = 1
+        for todo in database:
+            print(f"{no}. {todo}")
+            no+=1
+        
+    elif choice == "5":
+        print("Clear all Todo")
+        
+        database.clear()
+        
+        
+    elif choice == "#":
+        # exit("Goodbye!")
+        break
+   
+    else:
+        print("Invalid input")
+        
+        
+
+    
+[
+    {
+        "todo": "Eat",
+        "completed": False
+    }
+]
 
 # .pop , .append, .update, .extend
 
 
-value1= float(input("Value 1: "))
-value2= float(input("Value 2: "))
+# value1= float(input("Value 1: "))
+# value2= float(input("Value 2: "))
 
-print("""
-    1. Addition
-    2. Subtraction
-    3. Division
-    #. Exit     
-""")
+# print("""
+#     1. Addition
+#     2. Subtraction
+#     3. Division
+#     #. Exit     
+# """)
 
-choice = input("choice: ").strip()
-if choice == "1":
-    print(f"Ans: {value1 + value2}")
-elif choice == "2":
-    print(f"Ans: {value1 - value2}")
-elif choice == "3":
-    print(f"Ans: {value1 / value2}")
-elif choice == "#":
-    exit('Goodbye !')
-else:
-    print("Invalid option")
+# choice = input("choice: ").strip()
+# if choice == "1":
+#     print(f"Ans: {value1 + value2}")
+# elif choice == "2":
+#     print(f"Ans: {value1 - value2}")
+# elif choice == "3":
+#     print(f"Ans: {value1 / value2}")
+# elif choice == "#":
+#     exit('Goodbye !')
+# else:
+#     print("Invalid option")
