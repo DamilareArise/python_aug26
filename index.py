@@ -564,92 +564,83 @@ x = 10
 
 # A simple Todo app
 
-database=[]
+# database=[]
 
-while True:
-    print("""
-    1. Add a todo
-    2. Delete a todo
-    3. Edit a todo
-    4. View all
-    5. Clear all
-    6. Set todo as completed
-    #. exit
-    """)
-    choice = input("Choice: ").strip()
-    if choice == '1':
-        print('Add Todo')
-        todo = input("Your Todo: ").strip().capitalize()
-        if todo:
-            database.append(todo)
-            print("Todo saved.")
-        else:
-            print("No todo added.")
+# while True:
+#     print("""
+#     1. Add a todo
+#     2. Delete a todo
+#     3. Edit a todo
+#     4. View all
+#     5. Clear all
+#     6. Set todo as completed
+#     #. exit
+#     """)
+#     choice = input("Choice: ").strip()
+#     if choice == '1':
+#         print('Add Todo')
+#         todo = input("Your Todo: ").strip().capitalize()
+#         if todo:
+#             database.append(todo)
+#             print("Todo saved.")
+#         else:
+#             print("No todo added.")
         
-    elif choice == "2":
-        print("Delete Todo")
-        item_no = int(input("Delete Item no: "))
+#     elif choice == "2":
+#         print("Delete Todo")
+#         item_no = int(input("Delete Item no: "))
         
-        if item_no > len(database):
-            print("Invalid Item no. Try again.")
-            continue
+#         if item_no > len(database):
+#             print("Invalid Item no. Try again.")
+#             continue
         
-        index = item_no - 1
-        database.pop(index)
-        print("Todo Deleted.")
+#         index = item_no - 1
+#         database.pop(index)
+#         print("Todo Deleted.")
     
         
-    elif choice == "3":
-        print("Edit Todo")
-        item_no = int(input("Edit Item no: "))
+#     elif choice == "3":
+#         print("Edit Todo")
+#         item_no = int(input("Edit Item no: "))
                 
-        if item_no > len(database):
-            print("Invalid Item no. Try again.")
-            continue
+#         if item_no > len(database):
+#             print("Invalid Item no. Try again.")
+#             continue
         
         
-        new_name = input("New: ").strip().capitalize()
-        if not new_name:
-            print("Todo can't be empty")
-            continue
+#         new_name = input("New: ").strip().capitalize()
+#         if not new_name:
+#             print("Todo can't be empty")
+#             continue
         
-        index = item_no - 1
-        database[index] = new_name
-        print("Todo edited successfully")
-        
-        
-        
-    elif choice == "4":
-        print("View all Todo")
-        
-        no = 1
-        for todo in database:
-            print(f"{no}. {todo}")
-            no+=1
-        
-    elif choice == "5":
-        print("Clear all Todo")
-        
-        database.clear()
+#         index = item_no - 1
+#         database[index] = new_name
+#         print("Todo edited successfully")
         
         
-    elif choice == "#":
-        # exit("Goodbye!")
-        break
+        
+#     elif choice == "4":
+#         print("View all Todo")
+        
+#         no = 1
+#         for todo in database:
+#             print(f"{no}. {todo}")
+#             no+=1
+        
+#     elif choice == "5":
+#         print("Clear all Todo")
+        
+#         database.clear()
+        
+        
+#     elif choice == "#":
+#         # exit("Goodbye!")
+#         break
    
-    else:
-        print("Invalid input")
+#     else:
+#         print("Invalid input")
         
         
-
-    
-[
-    {
-        "todo": "Eat",
-        "completed": False
-    }
-]
-
 # .pop , .append, .update, .extend
 
 
@@ -674,3 +665,109 @@ while True:
 #     exit('Goodbye !')
 # else:
 #     print("Invalid option")
+
+
+# ussd app - conditional statement
+# simple banking system - conditional statement, operators, data structure
+# bet app - set, conditional, loop
+
+
+# deposit, withdraw, create account, login, check balance, 
+
+
+database = []
+
+while True:
+    print("""
+        1. Create Account
+        2. Login
+        #. Exit      
+    """)
+    
+    choice = input("Choice: ").strip()
+    if choice == "1":
+        fullname = input("Fullname: ").strip().title()
+        email = input("Email: ").strip().lower()
+        password = input("Password: ").strip()
+        confirm_password = input("Confirm Password: ").strip()
+       
+        if not fullname or not email or not password or not confirm_password:
+            print("❌All fields are required")
+            continue
+        
+        if password != confirm_password:
+            print("❌Password doesn't match")
+            continue
+        
+        user = {
+            "fullname": fullname,
+            "email": email,
+            "password": password,
+            "balance": 0.0
+        }
+        database.append(user)
+        print("Registration successfull") 
+           
+       
+    elif choice == "2":
+        email = input("Email: ").strip().lower()
+        password = input("Password: ").strip()
+        active_user = None
+        
+        
+        for user in database: # [{}, {}, {}]
+            if user['email'] == email:
+                active_user = user 
+        
+        if not active_user or active_user['password'] != password:
+            print("Invalid email or password")
+        else:
+            print("Login successfull")
+            while True:
+                print("""
+                1. Deposit
+                2. Withdraw
+                3. Check balance
+                #. Logout   
+                """)
+                
+                choice = input("Choice: ").strip()
+                if choice == "1":
+                    # print(active_user)
+                    amount = float(input("Amount: "))
+                    if amount < 1:
+                        print("Amount can't be less and #1.")
+                        continue
+                    
+                    active_user['balance'] += amount
+                    print(f"You've deposited #{amount}. Your account balance is #{active_user['balance']}")
+                    
+                    # print(database)
+                    
+                elif choice == "2":
+                    amount = float(input("Amount: "))
+                    if amount < 1:
+                        print("Amount can't be less and #1.")
+                        continue
+                    
+                    if amount > active_user['balance']:
+                        print("Insufficient funds")
+                        continue
+                    
+                    active_user['balance'] -= amount
+                    print(f"You've withrawn #{amount}. Your account balance is #{active_user['balance']}")
+                    
+                elif choice == "3":
+                    print(f"Your account balance is #{active_user['balance']}")
+                elif choice == "#":
+                    print("Signing out...")
+                    break
+                else:
+                    print("Invalid choice.")
+        
+    elif choice == "#":
+        print("Goodbye!")
+        break
+    
+    else:
+        print("Invalid choice.")
