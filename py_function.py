@@ -140,6 +140,112 @@ def check_balance():
     dashboard()
     
     
-dashboard()
+# dashboard()
         
-#Anonymous function
+# Anonymous function
+
+hello = lambda: "hello"
+# print(hello())
+
+
+get10 = lambda: 10
+# print(get10())
+
+add =  lambda x, y: x+y 
+# print(add(5, 6))
+
+
+
+# OOP - Object Oriented Programming
+# Object :- Is anything that has a property/properties/attributes and can perform a function
+# Procedural Oriented programming 
+# Benefit OOP:
+# 1. More neater code 
+# 2. Reusable code 
+# 3. Modularization
+
+# class - class is a blueprint/model of the object, hence object can be said to be the instance of a class
+
+# name = "Damilare"
+# name2 = "Bash"
+# num = 56
+# print(type(name))
+
+
+# class Human:
+#     pass
+
+
+# ada = Human()
+# lola = Human()
+# print(ada == lola)
+
+
+class Car:
+    brand = "Toyota"
+    model = "Land Cruiser"
+    
+    def drive(self):
+        print(f"The {self.brand} {self.model} is Driving...")
+        
+    def park(self):
+        print("parking...")
+    
+    
+car1 = Car()
+car2 = Car()
+
+# car1.model = "Corolla"
+# print(car2.model)
+
+# car1.park()
+# car1.drive()
+
+
+class Calculator:
+    name = 'Porpo Calculator'
+
+    def home(self):
+        print(self.name, "\n")
+        
+        self.value1 = float(input("Value 1: "))
+        self.value2 = float(input("Value 2: "))
+        
+        print("""
+        1. Addition
+        2. Subtraction
+        #. Exit      
+              
+        """)
+        choice = input("Choice: ")
+        if choice == "1":
+            print(f"Ans: {self.value1 + self.value2}")
+            self.proceed()
+            
+        elif choice == "2":
+            print(f"Ans: {self.value1 - self.value2}")
+            self.proceed()
+        elif choice == "#":
+            exit("Goodbye!")
+        else:
+            print("Invalid 1")
+            self.proceed()
+            
+    
+    def proceed(self):
+        action = input("Press enter to repeat or # to exit: ")
+        if action == "#":
+            exit("Goodbye!")
+        self.home()
+            
+calc = Calculator()
+calc.home()
+     
+
+# Modularization
+# SQL - DBMS
+# File handling
+# Error handling
+# Regular expression
+# Ipython
+# Git/Github
