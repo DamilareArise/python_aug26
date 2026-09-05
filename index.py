@@ -564,81 +564,81 @@ x = 10
 
 # A simple Todo app
 
-# database=[]
+database=[]
 
-# while True:
-#     print("""
-#     1. Add a todo
-#     2. Delete a todo
-#     3. Edit a todo
-#     4. View all
-#     5. Clear all
-#     6. Set todo as completed
-#     #. exit
-#     """)
-#     choice = input("Choice: ").strip()
-#     if choice == '1':
-#         print('Add Todo')
-#         todo = input("Your Todo: ").strip().capitalize()
-#         if todo:
-#             database.append(todo)
-#             print("Todo saved.")
-#         else:
-#             print("No todo added.")
+while True:
+    print("""
+    1. Add a todo
+    2. Delete a todo
+    3. Edit a todo
+    4. View all
+    5. Clear all
+    6. Set todo as completed
+    #. exit
+    """)
+    choice = input("Choice: ").strip()
+    if choice == '1':
+        print('Add Todo')
+        todo = input("Your Todo: ").strip().capitalize()
+        if todo:
+            database.append(todo)
+            print("Todo saved.")
+        else:
+            print("No todo added.")
         
-#     elif choice == "2":
-#         print("Delete Todo")
-#         item_no = int(input("Delete Item no: "))
+    elif choice == "2":
+        print("Delete Todo")
+        item_no = int(input("Delete Item no: "))
         
-#         if item_no > len(database):
-#             print("Invalid Item no. Try again.")
-#             continue
+        if item_no > len(database):
+            print("Invalid Item no. Try again.")
+            continue
         
-#         index = item_no - 1
-#         database.pop(index)
-#         print("Todo Deleted.")
+        index = item_no - 1
+        database.pop(index)
+        print("Todo Deleted.")
     
         
-#     elif choice == "3":
-#         print("Edit Todo")
-#         item_no = int(input("Edit Item no: "))
+    elif choice == "3":
+        print("Edit Todo")
+        item_no = int(input("Edit Item no: "))
                 
-#         if item_no > len(database):
-#             print("Invalid Item no. Try again.")
-#             continue
+        if item_no > len(database):
+            print("Invalid Item no. Try again.")
+            continue
         
         
-#         new_name = input("New: ").strip().capitalize()
-#         if not new_name:
-#             print("Todo can't be empty")
-#             continue
+        new_name = input("New: ").strip().capitalize()
+        if not new_name:
+            print("Todo can't be empty")
+            continue
         
-#         index = item_no - 1
-#         database[index] = new_name
-#         print("Todo edited successfully")
-        
-        
-        
-#     elif choice == "4":
-#         print("View all Todo")
-        
-#         no = 1
-#         for todo in database:
-#             print(f"{no}. {todo}")
-#             no+=1
-        
-#     elif choice == "5":
-#         print("Clear all Todo")
-        
-#         database.clear()
+        index = item_no - 1
+        database[index] = new_name
+        print("Todo edited successfully")
         
         
-#     elif choice == "#":
-#         # exit("Goodbye!")
-#         break
+        
+    elif choice == "4":
+        print("View all Todo")
+        
+        no = 1
+        for todo in database:
+            print(f"{no}. {todo}")
+            no+=1
+        
+    elif choice == "5":
+        print("Clear all Todo")
+        
+        database.clear()
+        
+        
+    elif choice == "#":
+        # exit("Goodbye!")
+        break
    
-#     else:
-#         print("Invalid input")
+    else:
+        print("Invalid input")
         
         
 # .pop , .append, .update, .extend

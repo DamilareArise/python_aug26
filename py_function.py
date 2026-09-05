@@ -238,9 +238,144 @@ class Calculator:
             exit("Goodbye!")
         self.home()
             
-calc = Calculator()
-calc.home()
+# calc = Calculator()
+# calc.home()
+
+
+
+
+class TodoApp:
+    name = None
+    __database = []
+    
+    def __init__(self, title):
+        self.name = title
+        # self.home()
+    
+    def __str__(self):
+        return self.name
+    
+    def home(self):
+        print(f"Welcome to {self.name}")
+        
+        print("""
+        1. Add Todo
+        2. View Todo  
+        #. Exit          
+        """)
+        
+        choice = input("Choice: ")
+        if choice == "1":
+            self.add_todo()
+        
+    def add_todo(self):
+        pass
+    
+    def get_database(self): #getters func
+        return self.__database
+    
+    def set_database(self, db):  #setters func
+         self.__database = db
+    
+    
+# td1 = TodoApp(title="Anything")
+# print(td1)    
+# td1.name = "Something Else"
+# td1.home()
+# td1.__database = ["qwerty"]
+# td1.set_database(["qwerty 000"])
+# print(td1.get_database())
+
      
+# td2 = TodoApp()
+# td2.home()
+
+
+# 4 - pillars of OOP
+# 1. Inheritance
+
+class Todo_v2(TodoApp):
+    brand_color = None
+    
+    def __init__(self, title, color):
+        self.brand_color = color
+        super().__init__(title)
+        
+    def home(self):
+        return super().home()
+    
+    
+# v2 = Todo_v2(title="MyTodo")
+
+
+
+# 2. Encapsulation
+# i public
+# ii. private
+# iii. Protected
+# iv. static
+
+
+# 3. Abstraction
+# 4. Polymorphism
+
+
+class TodoBackend:
+    __name = None
+    __database = []
+    
+    def __init__(self, name):
+        self.__name = name
+    
+    def create_todo(self, todo):
+        if not todo:
+            return "Todo can't be empty"
+        self.__database.append(todo)
+        return "Todo added successfully"
+    
+    def get_todos(self):
+        return self.__database
+    
+    def get_name(self):
+        return self.__name
+    
+
+
+class TodoFrontend(TodoBackend):
+    
+    def home(self):
+        print(f"""
+            Welcome to {self.get_name()}
+              
+        1. Add Todo
+        2. View all
+        #. Exit     
+        """)
+        
+        choice = input("Choice: ")
+        if choice == "1":
+            self.add_todo()
+        elif choice == "2":
+            self.view_all()
+        elif choice == "#":
+            exit("Goodbye!")
+        else:
+            print("Invalid option")
+            self.home()
+        
+    def add_todo(self):
+        todo = input("Todo: ")
+        res = self.create_todo(todo)
+        print(res)
+        self.home()
+        
+    def view_all(self):
+        todos = self.get_todos()
+        print(todos)
+        self.home()
+        
+my_app = TodoFrontend("MyApp")
+my_app.home()
 
 # Modularization
 # SQL - DBMS
